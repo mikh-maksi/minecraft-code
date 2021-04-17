@@ -1,0 +1,14 @@
+player.onItemInteracted(IRON_SHOVEL, function () {
+    player.runChatCommand("run")
+    player.runChatCommand("t")
+    player.runChatCommand("m")
+})
+player.onChat("m", function () {
+    agent.move(FORWARD, 5)
+})
+player.onChat("run", function () {
+    player.say("Вот это я бегу!!!")
+})
+player.onChat("t", function () {
+    agent.teleportToPlayer()
+})
