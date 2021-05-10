@@ -1,30 +1,11 @@
-function пол () {
-    agent.move(FORWARD, 1)
-    agent.move(LEFT, 1)
-    agent.move(UP, 1)
-    for (let index = 0; index < 5; index++) {
-        for (let index = 0; index < 15; index++) {
-            agent.place(DOWN)
-            agent.move(LEFT, 1)
-        }
-        agent.move(FORWARD, 1)
-        agent.move(RIGHT, 15)
-    }
-    agent.move(BACK, 6)
-    agent.move(RIGHT, 1)
-    agent.move(DOWN, 1)
-}
 player.onItemInteracted(IRON_SHOVEL, function () {
     agent.teleportToPlayer()
 })
 player.onItemInteracted(STICK, function () {
-    пол()
     build()
     Переход1()
     крыша()
     проем()
-    переход2()
-    ступеньки()
 })
 function проем () {
     for (let index = 0; index < 5; index++) {
@@ -82,11 +63,6 @@ function переход2 () {
     agent.move(LEFT, 5)
     agent.turn(RIGHT_TURN)
     agent.move(LEFT, 1)
-    agent.move(LEFT, 2)
-    agent.move(FORWARD, 3)
-    agent.move(DOWN, 3)
-    agent.turn(LEFT_TURN)
-    agent.turn(LEFT_TURN)
 }
 function Переход1 () {
     agent.move(FORWARD, 1)
@@ -110,11 +86,11 @@ function ступеньки () {
     agent.setSlot(4)
     agent.move(UP, 1)
     for (let index = 0; index < 3; index++) {
-        for (let index = 0; index < 3; index++) {
+        for (let index = 0; index < 4; index++) {
             agent.place(DOWN)
             agent.move(LEFT, 1)
         }
-        agent.move(RIGHT, 3)
+        agent.move(RIGHT, 4)
         agent.move(FORWARD, 1)
         agent.move(UP, 1)
     }
