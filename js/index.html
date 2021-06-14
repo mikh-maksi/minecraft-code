@@ -7,9 +7,43 @@
     <title>Document</title>
 </head>
 <body>
-    <button id = "btn">Button</button>
+    <input type="text" id = "a">
+    <input type="text" id  = "b">
+    <button id = "plus">+</button>
+    <button id = "minus">-</button>
+    <button id = "mult">*</button>
+    <button id = "div">/</button>
+    <button id = "mod">%</button>
+    <div id="result"></div>
     <script>
-        btn.addEventListener("click",function () {alert("Btn click")})
+        plus.addEventListener("click",function () {
+            c = parseInt(a.value) + parseInt(b.value);
+            //alert(c)
+            result.innerHTML= c;
+        
+        })
+        minus.addEventListener("click",function () {
+            c = parseInt(a.value) - parseInt(b.value);
+            //alert(c)
+            result.innerHTML= c;
+        })
+        mult.addEventListener("click",function () {
+            c = parseInt(a.value) * parseInt(b.value);
+            //alert(c)
+            result.innerHTML= c;
+        })
+        div.addEventListener("click",function () {
+            c = parseInt(a.value) / parseInt(b.value);
+            //alert(c)
+            result.innerHTML= c;
+        
+        })
+        mod.addEventListener("click",function () {
+            c = parseInt(a.value) % parseInt(b.value);
+            //alert(c)
+            result.innerHTML= c;
+        
+        })
     </script>
 </body>
 </html>

@@ -1,0 +1,285 @@
+let list: number[][] = []
+player.onChat("flats", function () {
+    agent.setItem(YELLOW_CONCRETE, 1, 1)
+    agent.setItem(BLACK_CONCRETE, 1, 2)
+    agent.setItem(RED_CONCRETE, 1, 3)
+    list = [
+    [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+    ],
+    [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+    ],
+    [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+    ]
+    ]
+    for (let index = 0; index < 4; index++) {
+        for (let value of list) {
+            for (let value1 of value) {
+                agent.setSlot(value1)
+                agent.destroy(DOWN)
+                agent.place(DOWN)
+                agent.move(FORWARD, 1)
+            }
+            agent.move(RIGHT, 1)
+            agent.move(BACK, value.length)
+        }
+    }
+})
+player.onItemInteracted(IRON_SHOVEL, function () {
+	
+})
+player.onChat("flat", function () {
+    agent.setItem(YELLOW_CONCRETE, 1, 1)
+    agent.setItem(BLACK_CONCRETE, 1, 2)
+    agent.setItem(RED_CONCRETE, 1, 3)
+    list = [
+    [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+    ],
+    [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+    ],
+    [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+    ]
+    ]
+    for (let value of list) {
+        for (let value1 of value) {
+            agent.setSlot(value1)
+            agent.destroy(DOWN)
+            agent.place(DOWN)
+            agent.move(FORWARD, 1)
+        }
+        agent.move(RIGHT, 1)
+        agent.move(BACK, value.length)
+    }
+})
+player.onItemInteracted(DIAMOND_SHOVEL, function () {
+    list = [
+    [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+    ],
+    [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+    ],
+    [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+    ],
+    [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+    ]
+    ]
+    agent.move(LEFT, list.length)
+})
