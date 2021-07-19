@@ -1,4 +1,4 @@
-player.onChat("start", function () {
+player.onChat("arena", function () {
     player.teleport(world(0, 4, 0))
     blocks.fill(
     OAK_FENCE,
