@@ -1,0 +1,79 @@
+function line () {
+    agent.setSlot(1)
+    for (let index = 0; index < 4; index++) {
+        agent.move(FORWARD, 1)
+        agent.place(DOWN)
+    }
+    agent.move(BACK, 1)
+    for (let індекс = 0; індекс <= 2; індекс++) {
+        agent.setSlot(індекс + 1)
+        agent.place(FORWARD)
+        agent.move(BACK, 1)
+    }
+}
+player.onItemInteracted(IRON_SHOVEL, function () {
+    agent.teleport(world(0, 4, 43), WEST)
+    blocks.fill(
+    AIR,
+    world(5, 4, 43),
+    world(0, 8, 39),
+    FillOperation.Replace
+    )
+    agent.move(UP, 1)
+    agent.setItem(BRICKS, 1, 1)
+    agent.setItem(STICKY_PISTON, 1, 2)
+    agent.setItem(DIAMOND_BLOCK, 1, 3)
+    agent.setItem(WOODEN_BUTTON, 1, 4)
+    agent.setItem(WOODEN_BUTTON, 1, 4)
+    agent.turn(LEFT_TURN)
+    agent.turn(LEFT_TURN)
+    agent.move(LEFT, 1)
+    for (let index = 0; index < 4; index++) {
+        line()
+        agent.move(LEFT, 1)
+    }
+    agent.move(FORWARD, 5)
+    agent.move(RIGHT, 1)
+    agent.turn(LEFT_TURN)
+    agent.turn(LEFT_TURN)
+    agent.setSlot(4)
+    for (let index = 0; index < 4; index++) {
+        agent.place(FORWARD)
+        agent.move(LEFT, 1)
+    }
+    agent.move(UP, 1)
+    for (let index = 0; index < 4; index++) {
+        agent.move(RIGHT, 1)
+        agent.setSlot(1)
+        agent.place(FORWARD)
+        agent.setSlot(5)
+        agent.place(FORWARD)
+    }
+    agent.setSlot(1)
+    for (let index = 0; index < 2; index++) {
+        agent.move(UP, 1)
+        for (let index = 0; index < 4; index++) {
+            agent.place(FORWARD)
+            agent.move(LEFT, 1)
+        }
+        agent.move(RIGHT, 4)
+    }
+    agent.move(LEFT, 2)
+    agent.move(DOWN, 1)
+    agent.setSlot(6)
+    agent.place(FORWARD)
+})
+loops.forever(function () {
+    if (blocks.testForBlock(DIAMOND_BLOCK, world(1, 5, 39))) {
+        player.say("Berlin")
+    }
+    if (blocks.testForBlock(DIAMOND_BLOCK, world(1, 5, 40))) {
+        player.say("Paris")
+    }
+    if (blocks.testForBlock(DIAMOND_BLOCK, world(1, 5, 41))) {
+        player.say("Glazgo")
+    }
+    if (blocks.testForBlock(DIAMOND_BLOCK, world(1, 5, 42))) {
+        player.say("London")
+    }
+})
